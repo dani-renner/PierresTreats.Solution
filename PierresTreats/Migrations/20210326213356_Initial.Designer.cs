@@ -9,7 +9,7 @@ using PierresTreats.Models;
 namespace PierresTreats.Migrations
 {
     [DbContext(typeof(PierresTreatsContext))]
-    [Migration("20210326210847_Initial")]
+    [Migration("20210326213356_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -260,9 +260,14 @@ namespace PierresTreats.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
                     b.HasKey("TreatId");
 
-                    b.ToTable("Categories");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Treats");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -342,6 +347,15 @@ namespace PierresTreats.Migrations
                     b.Navigation("flavor");
 
                     b.Navigation("treat");
+                });
+
+            modelBuilder.Entity("PierresTreats.Models.Treat", b =>
+                {
+                    b.HasOne("PierresTreats.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PierresTreats.Models.Flavor", b =>
