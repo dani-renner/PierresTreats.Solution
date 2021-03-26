@@ -11,6 +11,7 @@ using System.Security.Claims;
 
 namespace PierresTreats.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly PierresTreatsContext _db;
@@ -21,12 +22,12 @@ namespace PierresTreats.Controllers
       _userManager = userManager;
       _db = db;
     }
+    [AllowAnonymous]
     public ActionResult Index()
     {
       List<Flavor> model = _db.Flavors.ToList();
       return View(model);
     }
-    [Authorize]
     public ActionResult Create()
     {
       ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
