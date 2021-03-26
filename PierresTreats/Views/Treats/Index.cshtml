@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+@using PierresTreats.Models;
+@model IEnumerable<PierresTreats.Models.Treat>
+<h1>Flavors</h1>
+@if (@Model.Any())
+{
+  @foreach (Treat treat in Model)
+  {
+    <li>@treat.Name</li>
+  }
+}
+else
+{
+  <h3>No treats available!</h3>
+}
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
