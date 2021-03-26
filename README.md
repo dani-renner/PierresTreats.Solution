@@ -28,7 +28,7 @@ _This application creates a database to hold treats and flavors with a many-to-m
 * Add a file called appsettings.json with the command 'touch appsettings.json'. In that file, you will need to add the following code:
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=[dani_renner];uid=root;pwd=password;"
+      "DefaultConnection": "Server=localhost;Port=3306;database=dani_renner;uid=root;pwd=password;"
   }
 }
 * (The 'password' is only necessary if you have a password for your MySQL)
