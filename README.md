@@ -37,6 +37,9 @@ _This application creates a database to hold treats and flavors with a many-to-m
 * Ctrl + click the link that populates in the terminal to view the application in the webpage. It is probably http://localhost:5000/
 * Use Ctrl + C in the terminal to quit the host and close out of the window in the browser.
 
+## Known Bugs
+ _The app doesn't show if you are logged in or not._
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
