@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace FlavorTreat.Models
+namespace PierresTreats.Models
 {
     public class ApplicationUser : IdentityUser
     {
