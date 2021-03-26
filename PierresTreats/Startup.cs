@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PierresTreats.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace ToDoList
+namespace PierresTreats
 {
   public class Startup
   {
