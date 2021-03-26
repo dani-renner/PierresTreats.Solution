@@ -6,9 +6,9 @@
 <h1>Flavors</h1>
 @if (@Model.Any())
 {
-  @foreach (Flavor flavor in Model)
+  @foreach (var flavor in Model)
   {
-    <li>@flavor.Name</li>
+    <li>@Html.ActionLink($"{flavor.Name}", "Details", new {id = flavor.FlavorId})</li>
   }
 }
 else
