@@ -10,6 +10,7 @@
 * _C#_
 * _.NET 5.0.102_
 * _ASP.NET Core Mvc 4.8_
+* _ASP.NET Identity_
 * _MySQL_
 * _Razor_
 * _Entity Framework Core_
