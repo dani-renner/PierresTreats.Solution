@@ -8,7 +8,6 @@ namespace PierresTreats.Models
     {
       this.JoinEntities = new HashSet<FlavorTreat>();
     }
-
     public int FlavorId { get; set; }
     public string Name { get; set; }
     public virtual ApplicationUser User { get; set; }
