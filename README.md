@@ -37,8 +37,7 @@ _This application creates a database to hold treats and flavors with a many-to-m
 2. Quit out of SQL with Ctrl + c
 #### OR Using .NET
 1. In the terminal, navigate to the PierresTreats directory
-2. Enter "dotnet ef migrations add Initial"
-3. Enter "dotnet ef database update"
+2. Enter "dotnet ef database update"
 ### Running the program
 * From the PierresTreats directory, enter "dotnet restore"
 * Next, enter "dotnet build"
