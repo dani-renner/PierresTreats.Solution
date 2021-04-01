@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using PierresTreats.Models;
 using System.Collections.Generic;
@@ -8,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace PierresTreats.Controllers
 {
@@ -42,6 +41,14 @@ namespace PierresTreats.Controllers
       _db.Treats.Add(treat);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+    public ActionResult Details(int id)
+    {
+      var thisTreat = _db.Treats
+      .Include(treat => treat.JoinEntities)
+      .ThenInclude(join => join.Flavor)
+      .FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
     }
   }
 }

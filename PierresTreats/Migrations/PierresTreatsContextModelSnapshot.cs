@@ -330,21 +330,21 @@ namespace PierresTreats.Migrations
 
             modelBuilder.Entity("PierresTreats.Models.FlavorTreat", b =>
                 {
-                    b.HasOne("PierresTreats.Models.Flavor", "flavor")
+                    b.HasOne("PierresTreats.Models.Flavor", "Flavor")
                         .WithMany("JoinEntities")
                         .HasForeignKey("FlavorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PierresTreats.Models.Treat", "treat")
+                    b.HasOne("PierresTreats.Models.Treat", "Treat")
                         .WithMany("JoinEntities")
                         .HasForeignKey("TreatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("flavor");
+                    b.Navigation("Flavor");
 
-                    b.Navigation("treat");
+                    b.Navigation("Treat");
                 });
 
             modelBuilder.Entity("PierresTreats.Models.Treat", b =>
